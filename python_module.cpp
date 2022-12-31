@@ -21,6 +21,7 @@ PYBIND11_MODULE(pysorting, m) {
 
   py::class_<sorting::QuickSortState>(m, "QuickSortState")
       .def(py::init())
+      .def_readwrite("sorted", &sorting::QuickSortState::sorted)
       .def_readwrite("n", &sorting::QuickSortState::n)
       .def_readwrite("arr", &sorting::QuickSortState::arr)
       .def_readwrite("stack", &sorting::QuickSortState::stack)
