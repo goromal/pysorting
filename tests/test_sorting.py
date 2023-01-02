@@ -7,7 +7,7 @@ from pysorting import (
     validateState,
     persistStateToDisk,
     sortStateFromDisk,
-    restfulRandomizedQuickSort,
+    restfulQuickSort,
 )
 
 UINT32_MAX = 0xffffffff
@@ -61,7 +61,7 @@ class TestSorting:
         iter = 0
         maxIters = 50
         while not (state.top == UINT32_MAX and state.c != 0) and iter < maxIters:
-            iter_success, state_out = restfulRandomizedQuickSort(state)
+            iter_success, state_out = restfulQuickSort(state)
             assert iter_success
             state = state_out
             if state.l == int(ComparatorLeft.I):
